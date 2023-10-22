@@ -1,6 +1,6 @@
 # Page settings
 
-baseURL = "https://resume-demo.bas.work/"
+baseURL = "https://elegant-malabi-169652.netlify.app"
 languageCode = "en"
 title = "John Doe"
 enableGitInfo = false
