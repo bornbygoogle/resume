@@ -11,7 +11,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
     description = "Resume"
 #   og_image = "better-software.png"
     twitterName = "@bornbygoogle"
-    ghRepo = "https://github.com/codewithbas/resume/"
+    ghRepo = "https://github.com/bornbygoogle/"
     hugoRepo = "https://github.com/gohugoio/hugo/"
 
     [params.profile]
@@ -52,8 +52,6 @@ googleAnalytics = "UA-XXXXXXX-Y"
         title = "Blazor"
         [[params.skills.list]]
         title = "PL/SQL"
-        [[params.skills.list]]
-        title = "Oracle"
 
 
     [params.education]
@@ -123,11 +121,17 @@ googleAnalytics = "UA-XXXXXXX-Y"
 
     [params.projects]
         enable = true
+		
+		[[params.projects.list]]
+        title = "Cryptocurrency Trading Bot"
+        meta = "GitLab project"
+        url = "https://trade-monitor.minhan-tran.fr/"
+        tagline = "A cryptocurrency trading bot in .NET Core, leveraging BDD Oracle for intelligent decision-making. Hosted and maintained the system on Azure VM for high availability and scalability. Integrated Mosquito for real-time data analysis, demonstrating strong skills in algorithmic trading and cloud-based solutions."
 
         [[params.projects.list]]
         title = "This Resume"
         meta = "GitHub project"
-        url = "https://github.com/codewithbas/resume"
+        url = "https://github.com/bornbygoogle/resume"
         tagline = "A resume with a free PDF generator"
 
 
@@ -150,13 +154,13 @@ googleAnalytics = "UA-XXXXXXX-Y"
 
         [[params.social.list]]
         icon = "fab fa-github-square"
-        url = "https://github.com/codewithbas"
-        title = "/codewithbas"
+        url = "https://github.com/bornbygoogle"
+        title = "/bornbygoogle"
         [[params.social.list]]
         icon = "fab fa-linkedin"
-        url = "https://linkedin.com/in/bascodes"
-        title = "/in/bascodes"
+        url = "https://linkedin.com/in/bornbygoogle"
+        title = "/in/bornbygoogle"
         [[params.social.list]]
         icon = "fab fa-twitter-square"
-        url = "https://twitter.com/bascodes"
-        title = "@bascodes"
+        url = "https://twitter.com/bornbygoogle"
+        title = "@bornbygoogle"
