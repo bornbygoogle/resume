@@ -115,8 +115,9 @@ googleAnalytics = "UA-XXXXXXX-Y"
         company = "AKANEA Développement"
         details = "Increased the baudrate for comic book guy"
         [[params.experience.list.items]]
-        details = "Took buttery notes"
-
+        details = "Took buttery notes 1"
+        [[params.experience.list.items]]
+        details = "Took buttery notes2"
 
 
     [params.projects]
