@@ -38,15 +38,15 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
           NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
 
-      - name: generate PDFs # run main.py
-        env:
-          PDFCO_KEY: ${{ secrets.PDFCO_KEY }}
-          RESUME_URL: ${{ vars.RESUME_URL }}
-        run: |
-          mkdir static_pdf
-          python get_pdf.py
-          cp static_pdf/*.pdf ./static/
-          cp static_pdf/*.pdf ./public/
+      # - name: generate PDFs # run main.py
+        # env:
+          # PDFCO_KEY: ${{ secrets.PDFCO_KEY }}
+          # RESUME_URL: ${{ vars.RESUME_URL }}
+        # run: |
+          # mkdir static_pdf
+          # python get_pdf.py
+          # cp static_pdf/*.pdf ./static/
+          # cp static_pdf/*.pdf ./public/
 
       - name: Deploy to Netlify
         run: netlify deploy --dir=public --message="Auto Deploy with PDFs" --prod

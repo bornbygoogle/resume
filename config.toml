@@ -2,28 +2,28 @@
 
 baseURL = "https://elegant-malabi-169652.netlify.app"
 languageCode = "en"
-title = "John Doe"
+title = "Minh-An TRAN"
 enableGitInfo = false
 googleAnalytics = "UA-XXXXXXX-Y"
 
 [params]
-    author = "John Doe"
-    description = "Demo Resume"
-    og_image = "better-software.png"
-    twitterName = "@bascodes"
+    author = "Minh-An TRAN"
+    description = "Resume"
+#   og_image = "better-software.png"
+    twitterName = "@bornbygoogle"
     ghRepo = "https://github.com/codewithbas/resume/"
     hugoRepo = "https://github.com/gohugoio/hugo/"
 
     [params.profile]
         enable = true
-        name = "John Doe"
-        tagline = "Demo Resume"
-        avatar = "bas-steins-2.jpg"
+        name = "Minh-An TRAN"
+        tagline = "Resume"
+        avatar = "photo.jpg"
 
     [params.contact]
         enable = true
 
-        location = "Somewhere in the world"
+        location = "France"
 
         [[params.contact.list]]
         icon = "fas fa-phone-square"
@@ -31,11 +31,11 @@ googleAnalytics = "UA-XXXXXXX-Y"
         text = "confidential"
         [[params.contact.list]]
         icon = "fas fa-envelope-square"
-        url = "mailto:mail@example.org"
-        text = "mail@example.org"
+        url = "mailto:contact@minhan-tran.fr"
+        text = "contact@minhan-tran.fr"
         [[params.contact.list]]
         icon = "fas fa-globe"
-        url = "https://bas.bio"
+        url = "https://minhan-tran.fr"
         text = "My links on the web"
 
 
@@ -43,24 +43,34 @@ googleAnalytics = "UA-XXXXXXX-Y"
         enable = true
 
         [[params.skills.list]]
-        title = "Python"
+        title = ".NET Core"
         [[params.skills.list]]
-        title = "Lua"
+        title = ".NET Framework"
         [[params.skills.list]]
-        title = "LISP"
+        title = "Winform"
+        [[params.skills.list]]
+        title = "Blazor"
+        [[params.skills.list]]
+        title = "PL/SQL"
+        [[params.skills.list]]
+        title = "Oracle"
 
 
     [params.education]
         enable = true
 
         [[params.education.list]]
-        degree = "Master of Desaster"
-        university = "University of Life"
-        dates = "1990-present"
+        degree = "Professional Bachelor's Degree in DevOps"
+        university = "University of Lyon"
+        dates = "2018-2019"
+        [[params.education.list]]
+        degree = "Information Technology (IT) Technician Diploma"
+        university = "University of Lyon"
+        dates = "2015-2018"
 
 
     [params.awards]
-        enable = true
+        enable = false
 
         [[params.awards.list]]
         name = "Professional Scrum Master™ I"
@@ -72,33 +82,39 @@ googleAnalytics = "UA-XXXXXXX-Y"
         enable = true
 
         [[params.languages.list]]
-        name = "Klingon"
-        level = "Fluent"
+        name = "French"
+        level = "Professional skill"
 
         [[params.languages.list]]
         name = "English"
-        level = "Fluent"
+        level = "Professional skill"
+		
+		[[params.languages.list]]
+        name = "Vietnamese"
+        level = "Mother tongue"
 
 
     [params.interests]
         enable = true
 
         [[params.interests.list]]
-        name = "Counting Sheeps"
+        name = "Programming"
+        [[params.interests.list]]
+        name = "Technology monitoring"
 
 
     [params.summary]
         enable = true
-        text = "I am the 10 eggs developer you are looking for."
+        text = "Particularly interested in the profession of Developer, accompanied by strong motivation and effective time management while completing evening courses for my DUT in Computer Science while working full-time, I aim to apply the skills I have acquired daily by becoming a part of your teams. Beyond my skills, the adaptability I have demonstrated in the past is a quality that has contributed to my successes and one that I wish to bring to your company."
 
 
     [params.experience]
         enable = true
 
         [[params.experience.list]]
-        title = "Intern"
-        dates = "2000 - Present"
-        company = "Compuglobal Hyper Mega Net"
+        title = "Developper"
+        dates = "2018 - Present"
+        company = "AKANEA Développement"
         details = "Increased the baudrate for comic book guy"
         [[params.experience.list.items]]
         details = "Took buttery notes"
