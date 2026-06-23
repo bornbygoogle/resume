@@ -1,167 +1,385 @@
-# Page settings
+# ─────────────────────────────────────────────────────────────
+# Site configuration — bilingual (EN/FR) ATS-first resume
+# All translated resume content lives under [languages.<lang>.params]
+# Shared (non-translated) params stay in the top-level [params] block.
+# ─────────────────────────────────────────────────────────────
 
 baseURL = "https://elegant-malabi-169652.netlify.app"
-languageCode = "en"
 title = "Minh-An TRAN"
 enableGitInfo = false
-googleAnalytics = "UA-XXXXXXX-Y"
+enableRobotsTXT = false          # we ship a hand-written static/robots.txt
 
+# Bilingual: English default at /en/, French at /fr/, root redirects to /en/
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
+# googleAnalytics — re-enable with a real GA4 id (G-XXXX) when available
+# googleAnalytics = "G-XXXXXXXXXX"
+
+# ── Shared params (identical across languages) ───────────────
 [params]
     author = "Minh-An TRAN"
-    description = "Resume"
-#   og_image = "better-software.png"
     twitterName = "@bornbygoogle"
     ghRepo = "https://github.com/bornbygoogle/"
     hugoRepo = "https://github.com/gohugoio/hugo/"
+    og_image = "assets/images/photo.jpg"
 
-    [params.profile]
+# ═════════════════════════════════════════════════════════════
+# ENGLISH
+# ═════════════════════════════════════════════════════════════
+[languages.en]
+    label = "English"
+    locale = "en"
+    weight = 1
+    title = "Minh-An TRAN — Backend-Oriented Software Developer"
+
+[languages.en.params]
+    description = "Backend-Oriented Software Developer — .NET Core / Azure. Resume of Minh-An TRAN."
+
+    [languages.en.params.profile]
         enable = true
         name = "Minh-An TRAN"
-        tagline = "Resume"
+        headline = "Backend-Oriented Software Developer — .NET Core / Azure"
         avatar = "photo.jpg"
 
-    [params.contact]
+    [languages.en.params.contact]
         enable = true
+        location = "Lyon, France"
 
-        location = "France"
-
-        [[params.contact.list]]
+        [[languages.en.params.contact.list]]
         icon = "fas fa-phone-square"
         url = "tel:"
-        text = "confidential"
-        [[params.contact.list]]
+        text = "Available on request"
+
+        [[languages.en.params.contact.list]]
         icon = "fas fa-envelope-square"
         url = "mailto:contact@minhan-tran.fr"
         text = "contact@minhan-tran.fr"
-        [[params.contact.list]]
+
+        [[languages.en.params.contact.list]]
         icon = "fas fa-globe"
         url = "https://minhan-tran.fr"
-        text = "My links on the web"
+        text = "minhan-tran.fr"
 
+    [languages.en.params.summary]
+        enable = true
+        text = "Backend developer with 5+ years building reliable .NET and PL/SQL services for customs software. I design clean APIs, optimize database-heavy workloads, and ship with CI/CD on Azure while keeping systems observable and maintainable. Comfortable across the full lifecycle — from domain modeling and performance tuning to deployment and production support."
 
-    [params.skills]
+    [languages.en.params.experience]
         enable = true
 
-        [[params.skills.list]]
-        title = ".NET Core"
-        [[params.skills.list]]
-        title = ".NET Framework"
-        [[params.skills.list]]
-        title = "Winform"
-        [[params.skills.list]]
-        title = "Blazor"
-        [[params.skills.list]]
-        title = "PL/SQL"
-
-
-    [params.education]
-        enable = true
-
-        [[params.education.list]]
-        degree = "Professional Bachelor's Degree in DevOps"
-        university = "University of Lyon"
-        dates = "2018-2019"
-        [[params.education.list]]
-        degree = "Information Technology (IT) Technician Diploma"
-        university = "University of Lyon"
-        dates = "2015-2018"
-
-
-    [params.awards]
-        enable = false
-
-        [[params.awards.list]]
-        name = "Professional Scrum Master™ I"
-        body = "scrum.org"
-        date = "2018"
-
-
-    [params.languages]
-        enable = true
-
-        [[params.languages.list]]
-        name = "French"
-        level = "Professional skill"
-
-        [[params.languages.list]]
-        name = "English"
-        level = "Professional skill"
-		
-		[[params.languages.list]]
-        name = "Vietnamese"
-        level = "Mother tongue"
-
-
-    [params.interests]
-        enable = true
-
-        [[params.interests.list]]
-        name = "Programming"
-        [[params.interests.list]]
-        name = "Technology monitoring"
-
-
-    [params.summary]
-        enable = true
-        text = "Particularly interested in the profession of Developer, accompanied by strong motivation and effective time management while completing evening courses for my DUT in Computer Science while working full-time, I aim to apply the skills I have acquired daily by becoming a part of your teams. Beyond my skills, the adaptability I have demonstrated in the past is a quality that has contributed to my successes and one that I wish to bring to your company."
-
-
-    [params.experience]
-        enable = true
-
-        [[params.experience.list]]
-        title = "Developper"
-        dates = "2018 - Present"
+        [[languages.en.params.experience.list]]
+        title = "Backend Developer"
         company = "AKANEA Développement"
-        details = "Increased the baudrate for comic book guy"
-        [[params.experience.list.items]]
-        details = "Took buttery notes 1"
-        [[params.experience.list.items]]
-        details = "Took buttery notes2"
+        location = "Lyon, France"
+        dates = "2018 – Present"
+        details = "Building and maintaining .NET and PL/SQL backend services for customs software within AKANEA's Customs business unit."
+        tech = [".NET Core", "C#", "PL/SQL", "Oracle", "Azure", "MQTT", "Git"]
 
+        [[languages.en.params.experience.list.items]]
+        details = "Design and develop .NET Core backend services and REST APIs powering AKANEA's customs software."
 
-    [params.projects]
+        [[languages.en.params.experience.list.items]]
+        details = "Implement and optimize PL/SQL routines on Oracle databases for high-volume transactional workloads."
+
+        [[languages.en.params.experience.list.items]]
+        details = "Deploy and maintain applications on Azure, including virtual machines and CI/CD pipelines."
+
+        [[languages.en.params.experience.list.items]]
+        details = "Collaborate in an Agile/Scrum team across the full development lifecycle, from design to production support."
+
+    [languages.en.params.skills]
         enable = true
-		
-		[[params.projects.list]]
+
+        [[languages.en.params.skills.list]]
+        category = "Programming languages"
+        items = ["C#", "SQL (PL/SQL)"]
+
+        [[languages.en.params.skills.list]]
+        category = "Backend & frameworks"
+        items = [".NET / .NET Core", "ASP.NET Core", "Blazor", "WinForms", "REST APIs"]
+
+        [[languages.en.params.skills.list]]
+        category = "Databases"
+        items = ["Oracle", "SQL Server", "Behavior-Driven Development"]
+
+        [[languages.en.params.skills.list]]
+        category = "Cloud & DevOps"
+        items = ["Azure (VM, App Services)", "CI/CD", "Docker"]
+
+        [[languages.en.params.skills.list]]
+        category = "Integration"
+        items = ["MQTT / Mosquitto", "message queues", "gRPC"]
+
+        [[languages.en.params.skills.list]]
+        category = "Methods & tools"
+        items = ["Git", "GitLab", "Agile", "unit testing"]
+
+    [languages.en.params.projects]
+        enable = true
+
+        [[languages.en.params.projects.list]]
         title = "Cryptocurrency Trading Bot"
         meta = "GitLab project"
         url = "https://trade-monitor.minhan-tran.fr/"
-        tagline = "A cryptocurrency trading bot in .NET Core, leveraging BDD Oracle for intelligent decision-making. Hosted and maintained the system on Azure VM for high availability and scalability. Integrated Mosquito for real-time data analysis, demonstrating strong skills in algorithmic trading and cloud-based solutions."
+        tagline = "A cryptocurrency trading bot in .NET Core using Oracle BDD for decision-making. Hosted and maintained on an Azure VM for high availability, with Mosquitto (MQTT) for real-time data analysis."
 
-        [[params.projects.list]]
+        [[languages.en.params.projects.list]]
         title = "This Resume"
         meta = "GitHub project"
         url = "https://github.com/bornbygoogle/resume"
-        tagline = "A resume with a free PDF generator"
+        tagline = "An open-source, ATS-friendly, bilingual resume with automated PDF generation."
 
-
-    [params.information]
-        enable = false
-
-        [[params.information.list]]
-        title = "Papers"
-        [[params.information.list.items]]
-        details = "2018 · Lorem Ipsum"
-        [[params.information.list.items]]
-        details = "2016 · Sed Fringilla"
-
-        [[params.information.list]]
-        title = "Interests"
-        details = "Cooking, Beekeeping, Cycling"
-
-    [params.social]
+    [languages.en.params.education]
         enable = true
 
-        [[params.social.list]]
+        [[languages.en.params.education.list]]
+        degree = "Professional Bachelor's Degree in DevOps"
+        university = "University of Lyon"
+        dates = "2018 – 2019"
+
+        [[languages.en.params.education.list]]
+        degree = "DUT in Computer Science"
+        university = "University of Lyon"
+        dates = "2015 – 2018"
+
+    [languages.en.params.awards]
+        enable = false
+
+        [[languages.en.params.awards.list]]
+        name = "Professional Scrum Master I (PSM I)"
+        body = "scrum.org"
+        date = "2018"
+
+    [languages.en.params.languages]
+        enable = true
+
+        [[languages.en.params.languages.list]]
+        name = "French"
+        level = "Professional"
+
+        [[languages.en.params.languages.list]]
+        name = "English"
+        level = "Professional"
+
+        [[languages.en.params.languages.list]]
+        name = "Vietnamese"
+        level = "Native"
+
+    [languages.en.params.interests]
+        enable = true
+
+        [[languages.en.params.interests.list]]
+        name = "Programming & open source"
+
+        [[languages.en.params.interests.list]]
+        name = "Technology monitoring"
+
+    [languages.en.params.social]
+        enable = true
+
+        [[languages.en.params.social.list]]
         icon = "fab fa-github-square"
         url = "https://github.com/bornbygoogle"
-        title = "/bornbygoogle"
-        [[params.social.list]]
+        title = "GitHub"
+
+        [[languages.en.params.social.list]]
         icon = "fab fa-linkedin"
         url = "https://linkedin.com/in/bornbygoogle"
-        title = "/in/bornbygoogle"
-        [[params.social.list]]
+        title = "LinkedIn"
+
+        [[languages.en.params.social.list]]
         icon = "fab fa-twitter-square"
         url = "https://twitter.com/bornbygoogle"
-        title = "@bornbygoogle"
+        title = "Twitter"
+
+    [languages.en.params.footer]
+        copyright = "Minh-An TRAN"
+
+    # Reserved for future use (currently disabled in baseof.html)
+    [languages.en.params.courses]
+        enable = false
+    [languages.en.params.talks]
+        enable = false
+    [languages.en.params.information]
+        enable = false
+
+# ═════════════════════════════════════════════════════════════
+# FRANÇAIS
+# ═════════════════════════════════════════════════════════════
+[languages.fr]
+    label = "Français"
+    locale = "fr"
+    weight = 2
+    title = "Minh-An TRAN — Développeur Backend"
+
+[languages.fr.params]
+    description = "Développeur Backend — .NET Core / Azure. CV de Minh-An TRAN."
+
+    [languages.fr.params.profile]
+        enable = true
+        name = "Minh-An TRAN"
+        headline = "Développeur Backend — .NET Core / Azure"
+        avatar = "photo.jpg"
+
+    [languages.fr.params.contact]
+        enable = true
+        location = "Lyon, France"
+
+        [[languages.fr.params.contact.list]]
+        icon = "fas fa-phone-square"
+        url = "tel:"
+        text = "Sur demande"
+
+        [[languages.fr.params.contact.list]]
+        icon = "fas fa-envelope-square"
+        url = "mailto:contact@minhan-tran.fr"
+        text = "contact@minhan-tran.fr"
+
+        [[languages.fr.params.contact.list]]
+        icon = "fas fa-globe"
+        url = "https://minhan-tran.fr"
+        text = "minhan-tran.fr"
+
+    [languages.fr.params.summary]
+        enable = true
+        text = "Développeur backend avec plus de 5 ans d'expérience dans la conception de services fiables en .NET et PL/SQL pour des logiciels douaniers. Je conçois des API claires, optimise les charges lourdes en base de données et livre en CI/CD sur Azure, tout en gardant les systèmes observables et maintenables. À l'aise sur l'ensemble du cycle : de la modélisation du domaine et l'optimisation des performances au déploiement et au support en production."
+
+    [languages.fr.params.experience]
+        enable = true
+
+        [[languages.fr.params.experience.list]]
+        title = "Développeur Backend"
+        company = "AKANEA Développement"
+        location = "Lyon, France"
+        dates = "2018 – Présent"
+        details = "Conception et maintenance de services backend .NET et PL/SQL pour des logiciels douaniers, au sein de la BU Douane d'AKANEA."
+        tech = [".NET Core", "C#", "PL/SQL", "Oracle", "Azure", "MQTT", "Git"]
+
+        [[languages.fr.params.experience.list.items]]
+        details = "Conception et développement de services et d'API backend en .NET Core pour les logiciels douaniers d'AKANEA."
+
+        [[languages.fr.params.experience.list.items]]
+        details = "Implémentation et optimisation de routines PL/SQL sur bases Oracle pour des charges transactionnelles à fort volume."
+        
+        [[languages.fr.params.experience.list.items]]
+        details = "Déploiement et maintenance d'applications sur Azure, incluant machines virtuelles et pipelines CI/CD."
+
+        [[languages.fr.params.experience.list.items]]
+        details = "Collaboration au sein d'une équipe Agile/Scrum sur tout le cycle de développement, de la conception au support en production."
+
+    [languages.fr.params.skills]
+        enable = true
+
+        [[languages.fr.params.skills.list]]
+        category = "Langages de programmation"
+        items = ["C#", "SQL (PL/SQL)"]
+
+        [[languages.fr.params.skills.list]]
+        category = "Backend & frameworks"
+        items = [".NET / .NET Core", "ASP.NET Core", "Blazor", "WinForms", "API REST"]
+
+        [[languages.fr.params.skills.list]]
+        category = "Bases de données"
+        items = ["Oracle", "SQL Server", "Développment Dirigé par le Comportement (BDD)"]
+
+        [[languages.fr.params.skills.list]]
+        category = "Cloud & DevOps"
+        items = ["Azure (VM, App Services)", "CI/CD", "Docker"]
+
+        [[languages.fr.params.skills.list]]
+        category = "Intégration"
+        items = ["MQTT / Mosquitto", "files de messages", "gRPC"]
+
+        [[languages.fr.params.skills.list]]
+        category = "Méthodes & outils"
+        items = ["Git", "GitLab", "Agile", "tests unitaires"]
+
+    [languages.fr.params.projects]
+        enable = true
+
+        [[languages.fr.params.projects.list]]
+        title = "Robot de trading de cryptomonnaies"
+        meta = "Projet GitLab"
+        url = "https://trade-monitor.minhan-tran.fr/"
+        tagline = "Un robot de trading de cryptomonnaies en .NET Core utilisant Oracle BDD pour la prise de décision. Hébergé et maintenu sur une VM Azure pour la haute disponibilité, avec Mosquitto (MQTT) pour l'analyse des données en temps réel."
+
+        [[languages.fr.params.projects.list]]
+        title = "Ce CV"
+        meta = "Projet GitHub"
+        url = "https://github.com/bornbygoogle/resume"
+        tagline = "Un CV open-source, compatible ATS, bilingue, avec génération automatique des PDF."
+
+    [languages.fr.params.education]
+        enable = true
+
+        [[languages.fr.params.education.list]]
+        degree = "Licence Professionnelle en DevOps"
+        university = "Université de Lyon"
+        dates = "2018 – 2019"
+
+        [[languages.fr.params.education.list]]
+        degree = "DUT Informatique"
+        university = "Université de Lyon"
+        dates = "2015 – 2018"
+
+    [languages.fr.params.awards]
+        enable = false
+
+        [[languages.fr.params.awards.list]]
+        name = "Professional Scrum Master I (PSM I)"
+        body = "scrum.org"
+        date = "2018"
+
+    [languages.fr.params.languages]
+        enable = true
+
+        [[languages.fr.params.languages.list]]
+        name = "Français"
+        level = "Professionnel"
+
+        [[languages.fr.params.languages.list]]
+        name = "Anglais"
+        level = "Professionnel"
+
+        [[languages.fr.params.languages.list]]
+        name = "Vietnamien"
+        level = "Langue maternelle"
+
+    [languages.fr.params.interests]
+        enable = true
+
+        [[languages.fr.params.interests.list]]
+        name = "Programmation & open source"
+
+        [[languages.fr.params.interests.list]]
+        name = "Veille technologique"
+
+    [languages.fr.params.social]
+        enable = true
+
+        [[languages.fr.params.social.list]]
+        icon = "fab fa-github-square"
+        url = "https://github.com/bornbygoogle"
+        title = "GitHub"
+
+        [[languages.fr.params.social.list]]
+        icon = "fab fa-linkedin"
+        url = "https://linkedin.com/in/bornbygoogle"
+        title = "LinkedIn"
+
+        [[languages.fr.params.social.list]]
+        icon = "fab fa-twitter-square"
+        url = "https://twitter.com/bornbygoogle"
+        title = "Twitter"
+
+    [languages.fr.params.footer]
+        copyright = "Minh-An TRAN"
+
+    # Reserved for future use (currently disabled in baseof.html)
+    [languages.fr.params.courses]
+        enable = false
+    [languages.fr.params.talks]
+        enable = false
+    [languages.fr.params.information]
+        enable = false

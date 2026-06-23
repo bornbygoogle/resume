@@ -1,68 +1,71 @@
-name: run main.py
+name: build and deploy
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch: {}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: checkout repo content
-        uses: actions/checkout@v3 # checkout the repository content to github runner
-
-      - name: setup python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9' # install the python version needed
-          
-      - name: install python packages
+          python-version: "3.9"
+
+      - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Setup hugo
+      - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "0.110.0"
+          hugo-version: "0.163.3"
           extended: true
 
-      - name: Build Website
+      - name: Build site
         run: hugo --minify
 
-      - name: Deploy to Netlify
-        run: netlify deploy --dir=public --message="Auto Deploy" --prod
-        env: 
+      # 1) Deploy the site first so pdf.co can fetch the live language pages.
+      - name: Deploy site to Netlify
+        run: netlify deploy --dir=public --message="Auto deploy" --prod
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
           NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
 
-      # - name: generate PDFs # run main.py
-        # env:
-          # PDFCO_KEY: ${{ secrets.PDFCO_KEY }}
-          # RESUME_URL: ${{ vars.RESUME_URL }}
-        # run: |
-          # mkdir static_pdf
-          # python get_pdf.py
-          # cp static_pdf/*.pdf ./static/
-          # cp static_pdf/*.pdf ./public/
+      # 2) Generate per-language PDFs (en/fr × A4/Letter), drop into public + static.
+      - name: Generate per-language PDFs
+        env:
+          PDFCO_KEY: ${{ secrets.PDFCO_KEY }}
+          RESUME_URL: ${{ vars.RESUME_URL }}
+        run: |
+          mkdir -p static_pdf
+          python get_pdf.py
+          cp static_pdf/*.pdf ./public/
+          cp static_pdf/*.pdf ./static/
 
-      - name: Deploy to Netlify
-        run: netlify deploy --dir=public --message="Auto Deploy with PDFs" --prod
-        env: 
+      # 3) Redeploy with the freshly generated PDFs.
+      - name: Deploy with PDFs to Netlify
+        run: netlify deploy --dir=public --message="Auto deploy with PDFs" --prod
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
           NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
-          
-      - name: commit files
+
+      - name: Commit generated PDFs
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add static
           git diff-index --quiet HEAD || (git commit -a -m "updated PDFs" --allow-empty)
-          
-      - name: push changes
+
+      - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main 
+          branch: main

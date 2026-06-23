@@ -1,30 +1,30 @@
-<section class="work-section py-3">
-  <h3 class="text-uppercase resume-section-heading mb-4">
-    {{ i18n "experiences" }}
-  </h3>
+<section class="section" aria-labelledby="experience-heading">
+  <h2 class="section__title" id="experience-heading">{{ i18n "experiences" }}</h2>
 
+  <div class="timeline">
   {{ range .Site.Params.experience.list }}
-  <div class="item mb-3">
-    <div class="item-heading row align-items-center mb-2">
-      <h4 class="item-title col-12 col-md-6 col-lg-6 mb-2 mb-md-0">
-        {{ .title }}
-      </h4>
-      <div
-        class="item-meta col-12 col-md-6 col-lg-6 text-muted text-left text-md-right"
-      >
-        {{ .company }} | {{ .dates }}
-      </div>
+  <article class="role">
+    <div class="role__head">
+      <h3 class="role__title">{{ .title }}</h3>
+      <p class="role__meta">
+        <span>{{ .company }}</span>{{ with .location }}<span class="sep">·</span><span>{{ . }}</span>{{ end }}{{ with .dates }}<span class="sep">·</span><span class="role__dates">{{ . }}</span>{{ end }}
+      </p>
     </div>
-    <div class="item-content">
-      <p>{{ with .details }}{{ . | markdownify }}{{ end }}</p>
-      <ul class="resume-list">
-        {{ range .items }}
-        <li>{{ with .details }}{{ . | markdownify }}{{ end }}</li>
-        {{ end }}
-      </ul>
-    </div>
-  </div>
-  <!--//item-->
+
+    {{ with .details }}<p class="role__summary">{{ . | markdownify }}</p>{{ end }}
+
+    {{ with .tech }}
+    <ul class="role__tech">
+      {{ range . }}<li class="chip">{{ . }}</li>{{ end }}
+    </ul>
+    {{ end }}
+
+    {{ with .items }}
+    <ul class="role__list">
+      {{ range . }}<li>{{ .details | markdownify }}</li>{{ end }}
+    </ul>
+    {{ end }}
+  </article>
   {{ end }}
+  </div>
 </section>
-<!--//work-section-->

@@ -138,3 +138,8 @@ Temporary Items
 ### macOS Patch ###
 # iCloud generated files
 *.icloud
+
+.claude
+hugo.exe
+.gitignore
+CONTENT_INTAKE.md

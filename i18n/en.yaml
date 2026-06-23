@@ -1,20 +1,46 @@
-- id: awards
-  translation: Awards
-- id: education
-  translation: Education
+# English UI strings
+- id: contact
+  translation: Contact
+- id: summary
+  translation: Summary
 - id: experiences
   translation: Work Experience
-- id: information
-  translation: Information
-- id: interests
-  translation: Interests
-- id: languages
-  translation: Languages
-- id: projects
-  translation: Projects
 - id: skills
   translation: Skills
-- id: talks
-  translation: Talks
+- id: projects
+  translation: Projects
+- id: education
+  translation: Education
+- id: certifications
+  translation: Certifications
+- id: languages
+  translation: Languages
+- id: interests
+  translation: Interests
+- id: social_links
+  translation: Find me online
+- id: dark_mode
+  translation: Dark mode
+- id: language_switch_label
+  translation: Language
+- id: download_pdf_a4
+  translation: Download PDF (A4)
+- id: download_pdf_letter
+  translation: Download PDF (Letter)
+- id: not_found
+  translation: Page not found
+- id: back_home
+  translation: Back to resume
+- id: skip_to_content
+  translation: Skip to content
+- id: last_updated
+  translation: Last updated
+# Legacy keys (sections currently disabled) — kept for forward compatibility
 - id: courses
   translation: Courses Conducted
+- id: talks
+  translation: Talks
+- id: information
+  translation: Information
+- id: awards
+  translation: Awards

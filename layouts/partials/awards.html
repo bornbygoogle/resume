@@ -1,16 +1,13 @@
-<section class="education-section py-3">
-  <h3 class="text-uppercase resume-section-heading mb-4">
-    {{ i18n "awards" }}
-  </h3>
+<section class="section" aria-labelledby="certifications-heading">
+  <h2 class="section__title" id="certifications-heading">{{ i18n "certifications" }}</h2>
 
-  <ul class="list-unstyled resume-awards-list">
+  <ul class="entries">
     {{ range .Site.Params.awards.list }}
-    <li class="mb-3">
-      <div class="font-weight-bold">{{ .name }}</div>
-      <div class="text-muted">{{ .body }}</div>
-      <div class="text-muted">{{ .date }}</div>
+    <li class="entry">
+      <div class="entry__title">{{ .name }}</div>
+      <div class="entry__org">{{ .body }}</div>
+      <div class="entry__time">{{ .date }}</div>
     </li>
     {{ end }}
   </ul>
 </section>
-<!--//education-section-->

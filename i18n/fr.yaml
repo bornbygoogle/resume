@@ -1,0 +1,46 @@
+# Chaînes d'interface en français
+- id: contact
+  translation: Coordonnées
+- id: summary
+  translation: Profil
+- id: experiences
+  translation: Expérience professionnelle
+- id: skills
+  translation: Compétences
+- id: projects
+  translation: Projets
+- id: education
+  translation: Formation
+- id: certifications
+  translation: Certifications
+- id: languages
+  translation: Langues
+- id: interests
+  translation: Centres d'intérêt
+- id: social_links
+  translation: Retrouvez-moi en ligne
+- id: dark_mode
+  translation: Mode sombre
+- id: language_switch_label
+  translation: Langue
+- id: download_pdf_a4
+  translation: Télécharger le PDF (A4)
+- id: download_pdf_letter
+  translation: Télécharger le PDF (Lettre)
+- id: not_found
+  translation: Page introuvable
+- id: back_home
+  translation: Retour au CV
+- id: skip_to_content
+  translation: Aller au contenu
+- id: last_updated
+  translation: Mis à jour le
+# Clés héritées (sections actuellement désactivées) — conservées pour compatibilité
+- id: courses
+  translation: Formations dispensées
+- id: talks
+  translation: Conférences
+- id: information
+  translation: Informations
+- id: awards
+  translation: Distinctions

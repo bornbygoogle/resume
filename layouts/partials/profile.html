@@ -1,9 +1,16 @@
-<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
-  <h2 class="resume-name mb-0 text-uppercase">
-    {{ .Site.Params.profile.name }}
-  </h2>
-  <div class="resume-tagline mb-3 mb-md-0">
-    {{ .Site.Params.profile.tagline }}
+<div class="profile">
+  {{ with .Site.Params.profile.avatar }}
+  <img
+    class="profile__avatar"
+    src="/assets/images/{{ . }}"
+    alt="{{ $.Site.Params.profile.name }}"
+    width="88"
+    height="88"
+    loading="eager"
+  />
+  {{ end }}
+  <div class="profile__text">
+    <h1 class="profile__name">{{ .Site.Params.profile.name }}</h1>
+    <p class="profile__headline">{{ .Site.Params.profile.headline }}</p>
   </div>
 </div>
-<!--//resume-title-->

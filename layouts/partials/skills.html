@@ -1,18 +1,12 @@
-<section class="skills-section py-3">
-  <h3 class="text-uppercase resume-section-heading mb-4">
-    {{ i18n "skills" }}
-  </h3>
+<section class="section" aria-labelledby="skills-heading">
+  <h2 class="section__title" id="skills-heading">{{ i18n "skills" }}</h2>
 
   {{ range .Site.Params.skills.list }}
-  <div class="item">
-    <h4 class="item-title">{{ .title }}</h4>
-    <ul class="list-unstyled resume-skills-list">
-      {{ range .items }}
-      <li class="mb-2">{{ with .details }}{{ . | markdownify }}{{ end }}</li>
-      {{ end }}
+  <div class="skill-group">
+    <h3 class="skill-group__title">{{ .category }}</h3>
+    <ul class="skill-group__list">
+      {{ range .items }}<li class="chip">{{ . }}</li>{{ end }}
     </ul>
   </div>
-  <!--//item-->
   {{ end }}
 </section>
-<!--//skills-section-->

@@ -1,14 +1,12 @@
-<section class="skills-section py-3">
-  <h3 class="text-uppercase resume-section-heading mb-4">
-    {{ i18n "languages" }}
-  </h3>
+<section class="section" aria-labelledby="languages-heading">
+  <h2 class="section__title" id="languages-heading">{{ i18n "languages" }}</h2>
 
-  <ul class="list-unstyled resume-lang-list">
+  <ul class="entries">
     {{ range .Site.Params.languages.list }}
-    <li class="mb-2">
-      {{ .name }} <span class="text-muted">({{ .level }})</span>
+    <li class="entry">
+      <div class="entry__title">{{ .name }}</div>
+      <div class="entry__level">{{ .level }}</div>
     </li>
     {{ end }}
   </ul>
 </section>
-<!--//certificates-section-->
