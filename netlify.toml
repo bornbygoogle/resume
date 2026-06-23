@@ -1,2 +1,8 @@
 [build]
+    # Hugo site — explicit command stops Netlify's framework auto-detection,
+    # which otherwise sees `config.toml` and can't choose between Hugo and Zola.
+    command = "hugo --minify"
     publish = "public/"
+
+[build.environment]
+    HUGO_VERSION = "0.163.3"
