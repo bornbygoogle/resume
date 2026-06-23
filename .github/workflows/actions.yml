@@ -32,6 +32,14 @@ jobs:
       - name: Build site
         run: hugo --minify
 
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
       # 1) Deploy the site first so pdf.co can fetch the live language pages.
       - name: Deploy site to Netlify
         run: netlify deploy --dir=public --message="Auto deploy" --prod
