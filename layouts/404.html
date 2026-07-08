@@ -3,11 +3,11 @@
   {{ partial "head.html" . }}
 
   <body>
-    <main class="resume notfound" id="main">
+    <main class="landing notfound" id="main">
       <div class="notfound__code">404</div>
       <h1 class="notfound__title">{{ i18n "not_found" }}</h1>
       <p class="notfound__text">{{ .Site.Params.profile.name }}</p>
-      <a class="btn" href="{{ (printf "/%s/" .Site.Language.Lang) | relURL }}">{{ i18n "back_home" }}</a>
+      <a class="btn btn--primary" href="{{ (printf "/%s/" .Site.Language.Lang) | relURL }}">{{ i18n "back_home" }}</a>
     </main>
   </body>
 </html>

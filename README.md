@@ -27,3 +27,15 @@ Here is what you need:
 - [Netlify](https://netlify.com) for hosting
 - [PDF.co](https://pdf.co) for PDF generation
 - [GitHub Actions](https://github.com/features/actions) for automating the deployment
+
+## Architecture
+
+- `/en/` and `/fr/` — recruiter-facing landing page (dark, terminal-flavoured,
+  self-hosted fonts, no external dependencies). Template: `layouts/index.html`,
+  styles: `assets/css/landing.css`.
+- `/en/print/` and `/fr/print/` — classic ATS-friendly resume layout
+  (`layouts/print/list.html` + `assets/css/devresume.css`), `noindex`, excluded
+  from the sitemap. This is the page `get_pdf.py` sends to pdf.co to produce
+  `resume.{lang}.{a4,letter}.pdf`.
+- All content for both views comes from `config.toml`
+  (`languages.<lang>.params.*`) — single source of truth, bilingual.
