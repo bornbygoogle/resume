@@ -1,7 +1,7 @@
 <div class="resume__topbar">
   <div class="resume__topbar-left">
     <nav class="lang-switch" aria-label="{{ i18n "language_switch_label" }}">
-      {{ range .Sites }}
+      {{ range hugo.Sites }}
         {{ $lang := .Language.Lang }}
         {{ $href := (printf "/%s/" $lang) | relURL }}
         <a class="lang-switch__link" href="{{ $href }}" hreflang="{{ $lang }}" lang="{{ $lang }}"{{ if eq $lang $.Language.Lang }} aria-current="true"{{ end }}>{{ $lang | upper }}</a>

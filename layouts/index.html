@@ -8,7 +8,7 @@
 <div class="landing" id="main">
   <header class="topbar">
     <nav class="lang-switch" aria-label="{{ i18n "language_switch_label" }}">
-      {{ range .Sites }}
+      {{ range hugo.Sites }}
         {{ $lang := .Language.Lang }}
         <a class="lang-switch__link" href="{{ (printf "/%s/" $lang) | relURL }}" hreflang="{{ $lang }}" lang="{{ $lang }}"{{ if eq $lang $.Site.Language.Lang }} aria-current="true"{{ end }}>{{ $lang | upper }}</a>
       {{ end }}

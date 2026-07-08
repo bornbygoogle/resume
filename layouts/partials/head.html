@@ -42,7 +42,7 @@
 <meta name="twitter:image" content="{{ .Site.Params.og_image | absURL }}" />
 
 <link rel="canonical" href="{{ .Permalink }}" />
-{{ range .Sites }}{{ $lang := .Language.Lang }}<link rel="alternate" hreflang="{{ $lang }}" href="{{ (printf "/%s/" $lang) | absURL }}" />{{ end }}
+{{ range hugo.Sites }}{{ $lang := .Language.Lang }}<link rel="alternate" hreflang="{{ $lang }}" href="{{ (printf "/%s/" $lang) | absURL }}" />{{ end }}
 <link rel="alternate" hreflang="x-default" href="{{ "/en/" | absURL }}" />
 
 {{ if eq .Type "print" }}
