@@ -1,3 +1,166 @@
 {{ define "main" }}
-{{ partial "print-resume.html" . }}
+{{- /* email extrait de contact.list (source unique de vérité) */ -}}
+{{- $email := "" -}}
+{{- range .Site.Params.contact.list -}}{{- if hasPrefix .url "mailto:" -}}{{- $email = strings.TrimPrefix "mailto:" .url -}}{{- end -}}{{- end -}}
+
+<a class="visually-hidden" href="#main">{{ i18n "skip_to_content" }}</a>
+
+<div class="landing" id="main">
+  <header class="topbar">
+    <nav class="lang-switch" aria-label="{{ i18n "language_switch_label" }}">
+      {{ range .Sites }}
+        {{ $lang := .Language.Lang }}
+        <a class="lang-switch__link" href="{{ (printf "/%s/" $lang) | relURL }}" hreflang="{{ $lang }}" lang="{{ $lang }}"{{ if eq $lang $.Site.Language.Lang }} aria-current="true"{{ end }}>{{ $lang | upper }}</a>
+      {{ end }}
+    </nav>
+
+    <label class="theme-toggle">
+      <input type="checkbox" id="darkSwitch" />
+      <span class="theme-toggle__track"><span class="theme-toggle__thumb"></span></span>
+      <span class="visually-hidden">{{ i18n "dark_mode" }}</span>
+    </label>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="hero__prompt"><span class="prompt-sign">$</span>whoami<span class="cursor"></span></p>
+      <h1 class="hero__name">{{ .Site.Params.profile.name }}</h1>
+      <p class="hero__headline">{{ .Site.Params.profile.headline }}</p>
+
+      {{ with .Site.Params.hero }}{{ if .available }}
+      <p class="badge-available"><span class="dot"></span>{{ .availability }}</p>
+      {{ end }}{{ end }}
+
+      {{ with .Site.Params.summary }}{{ if .enable }}
+      <p class="hero__summary">{{ .text }}</p>
+      {{ end }}{{ end }}
+
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="mailto:{{ $email }}">{{ partial "icon.html" "mail" }}{{ i18n "contact_me" }}</a>
+        <a class="btn btn--ghost" href="{{ printf "/resume.%s.a4.pdf" .Site.Language.Lang | relURL }}">{{ partial "icon.html" "download" }}{{ i18n "download_pdf_a4" }}</a>
+        <a class="btn btn--ghost" href="{{ printf "/resume.%s.letter.pdf" .Site.Language.Lang | relURL }}">{{ partial "icon.html" "download" }}{{ i18n "download_pdf_letter" }}</a>
+      </div>
+    </div>
+
+    {{ with .Site.Params.profile.avatar }}
+    <img class="hero__avatar" src="{{ printf "assets/images/%s" . | relURL }}" alt="{{ $.Site.Params.profile.name }}" width="96" height="96" />
+    {{ end }}
+  </section>
+
+  {{ with .Site.Params.stats }}{{ if .enable }}
+  <section class="stats" aria-label="Key facts">
+    {{ range .list }}
+    <div class="stat">
+      <div class="stat__value">{{ .value }}</div>
+      <div class="stat__label">{{ .label }}</div>
+    </div>
+    {{ end }}
+  </section>
+  {{ end }}{{ end }}
+
+  {{ with .Site.Params.experience }}{{ if .enable }}
+  <section class="section" id="experience">
+    <h2 class="section__title"><span class="section__hash">##</span>{{ i18n "experiences" }}</h2>
+    <div class="timeline">
+      {{ range .list }}
+      <div class="timeline__item">
+        <p class="timeline__dates">{{ .dates }}</p>
+        <h3 class="timeline__role">{{ .title }}</h3>
+        <p class="timeline__org">{{ .company }} — {{ .location }}</p>
+        {{ with .details }}<p class="timeline__details">{{ . }}</p>{{ end }}
+        {{ with .items }}
+        <ul class="timeline__bullets">
+          {{ range . }}<li>{{ .details }}</li>{{ end }}
+        </ul>
+        {{ end }}
+        {{ with .tech }}
+        <div class="chips">
+          {{ range . }}<span class="chip">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}{{ end }}
+
+  {{ with .Site.Params.projects }}{{ if .enable }}
+  <section class="section" id="projects">
+    <h2 class="section__title"><span class="section__hash">##</span>{{ i18n "projects" }}</h2>
+    <div class="projects">
+      {{ range .list }}
+      <article class="term-card">
+        <div class="term-card__bar">
+          <span class="term-card__dot"></span><span class="term-card__dot"></span><span class="term-card__dot"></span>
+          <span class="term-card__title">{{ .meta }}</span>
+        </div>
+        <div class="term-card__body">
+          <h3 class="term-card__name">
+            {{ if .url }}<a href="{{ .url }}" rel="noopener">{{ .title }} {{ partial "icon.html" "external" }}</a>{{ else }}{{ .title }}{{ end }}
+          </h3>
+          <p class="term-card__tagline">{{ .tagline }}</p>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}{{ end }}
+
+  {{ with .Site.Params.skills }}{{ if .enable }}
+  <section class="section" id="skills">
+    <h2 class="section__title"><span class="section__hash">##</span>{{ i18n "skills" }}</h2>
+    {{ range .list }}
+    <div class="skills-group">
+      <p class="skills-group__name">{{ .category }}</p>
+      <div class="chips">
+        {{ range .items }}<span class="chip">{{ . }}</span>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </section>
+  {{ end }}{{ end }}
+
+  <section class="section edu" id="education">
+    {{ with .Site.Params.education }}{{ if .enable }}
+    <div>
+      <h2 class="section__title"><span class="section__hash">##</span>{{ i18n "education" }}</h2>
+      {{ range .list }}
+      <div class="edu__item">
+        <p class="edu__degree">{{ .degree }}</p>
+        <p class="edu__sub">{{ .university }} · {{ .dates }}</p>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}{{ end }}
+
+    {{ with .Site.Params.languages }}{{ if .enable }}
+    <div>
+      <h2 class="section__title"><span class="section__hash">##</span>{{ i18n "languages" }}</h2>
+      <ul class="lang-list">
+        {{ range .list }}
+        <li><span>{{ .name }}</span><span class="level">{{ .level }}</span></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}{{ end }}
+  </section>
+
+  <section class="footer-cta" id="contact">
+    <h2 class="footer-cta__title">{{ i18n "footer_cta_title" }}</h2>
+    <p class="footer-cta__text">{{ i18n "footer_cta_text" }}</p>
+    <a class="btn btn--primary" href="mailto:{{ $email }}">{{ partial "icon.html" "mail" }}{{ $email }}</a>
+
+    {{ with .Site.Params.social }}{{ if .enable }}
+    <div class="footer-cta__social">
+      {{ range .list }}
+      <a href="{{ .url }}" rel="noopener" aria-label="{{ .title }}">{{ partial "icon.html" (lower .title) }}</a>
+      {{ end }}
+    </div>
+    {{ end }}{{ end }}
+  </section>
+
+  <p class="footer-note">
+    {{ i18n "open_source_note" }} — <a href="{{ .Site.Params.ghRepo }}resume" rel="noopener">github.com/bornbygoogle/resume</a>
+  </p>
+</div>
 {{ end }}
