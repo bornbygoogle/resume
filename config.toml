@@ -65,6 +65,25 @@ defaultContentLanguageInSubdir = true
         enable = true
         text = "Backend developer with 5+ years building reliable .NET and PL/SQL services for customs software. I design clean APIs, optimize database-heavy workloads, and ship with CI/CD on Azure while keeping systems observable and maintainable. Comfortable across the full lifecycle — from domain modeling and performance tuning to deployment and production support."
 
+    [languages.en.params.hero]
+        available = true
+        availability = "Open to new opportunities"
+
+    [languages.en.params.stats]
+        enable = true
+
+        [[languages.en.params.stats.list]]
+        value = "5+"
+        label = "years building backend services in production"
+
+        [[languages.en.params.stats.list]]
+        value = ".NET · Oracle · Azure"
+        label = "core stack, from API design to CI/CD"
+
+        [[languages.en.params.stats.list]]
+        value = "FR · EN · VI"
+        label = "working languages"
+
     [languages.en.params.experience]
         enable = true
 
@@ -77,16 +96,16 @@ defaultContentLanguageInSubdir = true
         tech = [".NET Core", "C#", "PL/SQL", "Oracle", "Azure", "MQTT", "Git"]
 
         [[languages.en.params.experience.list.items]]
-        details = "Design and develop .NET Core backend services and REST APIs powering AKANEA's customs software."
+        details = "Design and ship .NET Core backend services and REST APIs at the heart of AKANEA's customs software."
 
         [[languages.en.params.experience.list.items]]
-        details = "Implement and optimize PL/SQL routines on Oracle databases for high-volume transactional workloads."
+        details = "Optimize PL/SQL routines on Oracle for high-volume transactional workloads, from profiling to query tuning."
 
         [[languages.en.params.experience.list.items]]
-        details = "Deploy and maintain applications on Azure, including virtual machines and CI/CD pipelines."
+        details = "Run deployments on Azure — virtual machines and CI/CD pipelines — from build to production."
 
         [[languages.en.params.experience.list.items]]
-        details = "Collaborate in an Agile/Scrum team across the full development lifecycle, from design to production support."
+        details = "Contribute across the full lifecycle in an Agile/Scrum team, from domain design to production support."
 
     [languages.en.params.skills]
         enable = true
@@ -245,6 +264,25 @@ defaultContentLanguageInSubdir = true
         enable = true
         text = "Développeur backend avec plus de 5 ans d'expérience dans la conception de services fiables en .NET et PL/SQL pour des logiciels douaniers. Je conçois des API claires, optimise les charges lourdes en base de données et livre en CI/CD sur Azure, tout en gardant les systèmes observables et maintenables. À l'aise sur l'ensemble du cycle : de la modélisation du domaine et l'optimisation des performances au déploiement et au support en production."
 
+    [languages.fr.params.hero]
+        available = true
+        availability = "Disponible pour de nouvelles opportunités"
+
+    [languages.fr.params.stats]
+        enable = true
+
+        [[languages.fr.params.stats.list]]
+        value = "5+"
+        label = "années de services backend en production"
+
+        [[languages.fr.params.stats.list]]
+        value = ".NET · Oracle · Azure"
+        label = "stack principale, de l'API au CI/CD"
+
+        [[languages.fr.params.stats.list]]
+        value = "FR · EN · VI"
+        label = "langues de travail"
+
     [languages.fr.params.experience]
         enable = true
 
@@ -257,16 +295,16 @@ defaultContentLanguageInSubdir = true
         tech = [".NET Core", "C#", "PL/SQL", "Oracle", "Azure", "MQTT", "Git"]
 
         [[languages.fr.params.experience.list.items]]
-        details = "Conception et développement de services et d'API backend en .NET Core pour les logiciels douaniers d'AKANEA."
+        details = "Conception et livraison de services backend et d'API REST en .NET Core, au cœur des logiciels douaniers d'AKANEA."
 
         [[languages.fr.params.experience.list.items]]
-        details = "Implémentation et optimisation de routines PL/SQL sur bases Oracle pour des charges transactionnelles à fort volume."
-        
-        [[languages.fr.params.experience.list.items]]
-        details = "Déploiement et maintenance d'applications sur Azure, incluant machines virtuelles et pipelines CI/CD."
+        details = "Optimisation de routines PL/SQL sur Oracle pour des charges transactionnelles à fort volume, du profilage au tuning de requêtes."
 
         [[languages.fr.params.experience.list.items]]
-        details = "Collaboration au sein d'une équipe Agile/Scrum sur tout le cycle de développement, de la conception au support en production."
+        details = "Déploiements sur Azure — machines virtuelles et pipelines CI/CD — du build à la production."
+
+        [[languages.fr.params.experience.list.items]]
+        details = "Contribution sur tout le cycle en équipe Agile/Scrum, de la conception du domaine au support en production."
 
     [languages.fr.params.skills]
         enable = true

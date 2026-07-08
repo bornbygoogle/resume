@@ -35,6 +35,14 @@
   translation: Skip to content
 - id: last_updated
   translation: Last updated
+- id: contact_me
+  translation: Get in touch
+- id: footer_cta_title
+  translation: A role or a project in mind?
+- id: footer_cta_text
+  translation: "The fastest way to reach me is email."
+- id: open_source_note
+  translation: This resume is open source
 # Legacy keys (sections currently disabled) — kept for forward compatibility
 - id: courses
   translation: Courses Conducted

@@ -35,6 +35,14 @@
   translation: Aller au contenu
 - id: last_updated
   translation: Mis à jour le
+- id: contact_me
+  translation: Me contacter
+- id: footer_cta_title
+  translation: Un poste ou un projet en tête ?
+- id: footer_cta_text
+  translation: "Le plus simple pour me joindre : un email."
+- id: open_source_note
+  translation: Ce CV est open source
 # Clés héritées (sections actuellement désactivées) — conservées pour compatibilité
 - id: courses
   translation: Formations dispensées
