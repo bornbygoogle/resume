@@ -116,7 +116,7 @@ def main() -> None:
 
     for lang in LANGUAGES:
         for paper_size in FORMATS:
-            page_url = f"{SITE_URL}/{lang}/"
+            page_url = f"{SITE_URL}/{lang}/print/"
             out = out_dir / f"resume.{lang}.{paper_size.lower()}.pdf"
             print(f"Generating {out.name} from {page_url} ({paper_size}) ...")
             convert(page_url, paper_size, out)

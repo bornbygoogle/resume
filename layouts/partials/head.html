@@ -27,6 +27,7 @@
 <meta name="msapplication-TileColor" content="#4f46e5" />
 <meta name="theme-color" content="#4f46e5" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
+{{ if eq .Type "print" }}<meta name="robots" content="noindex" />{{ end }}
 
 <!-- Open Graph / Twitter (per-language) -->
 <meta property="og:title" content="{{ .Site.Params.profile.name }} — {{ .Site.Params.profile.headline }}" />

@@ -3,37 +3,7 @@
   {{ partial "head.html" . }}
 
   <body>
-    <a class="visually-hidden" href="#main">{{ i18n "skip_to_content" }}</a>
-
-    <main class="resume" id="main">
-      <div class="resume__page">
-        {{ partial "header.html" . }}
-
-        <article class="resume__card">
-          <header class="resume__header">
-            {{ if .Site.Params.profile.enable }}{{ partial "profile.html" . }}{{ end }}
-            {{ if .Site.Params.contact.enable }}{{ partial "contact.html" . }}{{ end }}
-          </header>
-
-          {{ if .Site.Params.summary.enable }}{{ partial "summary.html" . }}{{ end }}
-
-          <div class="resume__grid">
-            <div class="resume__main">
-              {{ if .Site.Params.experience.enable }}{{ partial "experience.html" . }}{{ end }}
-              {{ if .Site.Params.skills.enable }}{{ partial "skills.html" . }}{{ end }}
-              {{ if .Site.Params.projects.enable }}{{ partial "projects.html" . }}{{ end }}
-            </div>
-
-            <aside class="resume__aside">
-              {{ partial "sidebar.html" . }}
-            </aside>
-          </div>
-
-          {{ partial "footer.html" . }}
-        </article>
-      </div>
-    </main>
-
+    {{ block "main" . }}{{ end }}
     {{ partial "scripts.html" . }}
   </body>
 </html>
