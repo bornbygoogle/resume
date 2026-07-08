@@ -37,6 +37,8 @@
   translation: Last updated
 - id: contact_me
   translation: Get in touch
+- id: view_github
+  translation: My GitHub
 - id: footer_cta_title
   translation: A role or a project in mind?
 - id: footer_cta_text

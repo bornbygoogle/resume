@@ -37,6 +37,7 @@
 
       <div class="hero__cta">
         <a class="btn btn--primary" href="mailto:{{ $email }}">{{ partial "icon.html" "mail" }}{{ i18n "contact_me" }}</a>
+        <a class="btn btn--ghost" href="{{ .Site.Params.ghRepo }}" rel="noopener">{{ partial "icon.html" "github" }}{{ i18n "view_github" }}</a>
         <a class="btn btn--ghost" href="{{ printf "/resume.%s.a4.pdf" .Site.Language.Lang | relURL }}">{{ partial "icon.html" "download" }}{{ i18n "download_pdf_a4" }}</a>
         <a class="btn btn--ghost" href="{{ printf "/resume.%s.letter.pdf" .Site.Language.Lang | relURL }}">{{ partial "icon.html" "download" }}{{ i18n "download_pdf_letter" }}</a>
       </div>

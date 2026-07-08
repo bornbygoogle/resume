@@ -37,6 +37,8 @@
   translation: Mis à jour le
 - id: contact_me
   translation: Me contacter
+- id: view_github
+  translation: Mon GitHub
 - id: footer_cta_title
   translation: Un poste ou un projet en tête ?
 - id: footer_cta_text
