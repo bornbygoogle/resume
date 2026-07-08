@@ -66,7 +66,7 @@ defaultContentLanguageInSubdir = true
         text = "Backend developer with 5+ years building reliable .NET and PL/SQL services for customs software. I design clean APIs, optimize database-heavy workloads, and ship with CI/CD on Azure while keeping systems observable and maintainable. Comfortable across the full lifecycle — from domain modeling and performance tuning to deployment and production support."
 
     [languages.en.params.hero]
-        available = true
+        available = false
         availability = "Open to new opportunities"
 
     [languages.en.params.stats]
@@ -265,7 +265,7 @@ defaultContentLanguageInSubdir = true
         text = "Développeur backend avec plus de 5 ans d'expérience dans la conception de services fiables en .NET et PL/SQL pour des logiciels douaniers. Je conçois des API claires, optimise les charges lourdes en base de données et livre en CI/CD sur Azure, tout en gardant les systèmes observables et maintenables. À l'aise sur l'ensemble du cycle : de la modélisation du domaine et l'optimisation des performances au déploiement et au support en production."
 
     [languages.fr.params.hero]
-        available = true
+        available = false
         availability = "Disponible pour de nouvelles opportunités"
 
     [languages.fr.params.stats]
