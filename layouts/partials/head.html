@@ -9,7 +9,7 @@
   (function () {
     try {
       var t = localStorage.getItem("theme");
-      var dark = t === "dark" || (t !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      var dark = t !== "light";
       if (dark) document.documentElement.classList.add("dark");
     } catch (e) {}
   })();
@@ -45,22 +45,29 @@
 {{ range .Sites }}{{ $lang := .Language.Lang }}<link rel="alternate" hreflang="{{ $lang }}" href="{{ (printf "/%s/" $lang) | absURL }}" />{{ end }}
 <link rel="alternate" hreflang="x-default" href="{{ "/en/" | absURL }}" />
 
-<!-- Fonts: Inter (sans) + JetBrains Mono (accents) -->
+{{ if eq .Type "print" }}
+<!-- Vue print : stack historique conservée à l'identique (pdf.co l'imprime) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
 />
-
-<!-- FontAwesome (webfont build) -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" />
-
-<!-- Theme CSS (plain CSS — builds on any Hugo version, no transpiler needed) -->
 {{ with resources.Get "css/devresume.css" | minify | fingerprint }}
 <style>
   {{ .Content | safeCSS }}
 </style>
+{{ end }}
+{{ else }}
+<!-- Vue landing : fonts self-hosted, zéro dépendance externe -->
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/jetbrains-mono-400.woff2" as="font" type="font/woff2" crossorigin />
+{{ with resources.Get "css/landing.css" | minify | fingerprint }}
+<style>
+  {{ .Content | safeCSS }}
+</style>
+{{ end }}
 {{ end }}
 
 <!-- JSON-LD Person schema (highest-leverage ATS/SEO structured data) -->

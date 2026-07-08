@@ -1,6 +1,6 @@
 // Theme toggle — wires the #darkSwitch checkbox to the `.dark` class on <html>.
-// The initial class is applied by an inline script in <head> (prevents a flash
-// of the wrong theme); this file only handles interaction + keeping state in sync.
+// Dark is the default; light only applies when the user explicitly chose it.
+// The initial class is applied by an inline script in <head> (no flash).
 (function () {
   var toggle = document.getElementById("darkSwitch");
   if (!toggle) return; // pages without the toggle (e.g. 404) simply opt out
@@ -21,11 +21,4 @@
   toggle.addEventListener("change", function () {
     setTheme(toggle.checked);
   });
-
-  // Follow the OS preference only when the user hasn't chosen explicitly.
-  window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", function (e) {
-      if (localStorage.getItem("theme") === null) setTheme(e.matches);
-    });
 })();
