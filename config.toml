@@ -63,7 +63,7 @@ defaultContentLanguageInSubdir = true
 
     [languages.en.params.summary]
         enable = true
-        text = "Backend developer with 5+ years building reliable .NET and PL/SQL services for customs software. I design clean APIs, optimize database-heavy workloads, and ship with CI/CD on Azure while keeping systems observable and maintainable. Comfortable across the full lifecycle — from domain modeling and performance tuning to deployment and production support."
+        text = "Backend developer with 5+ years building reliable .NET and PL/SQL services for customs software, and the author of two Shopify apps published on the App Store. I design clean APIs, optimize database-heavy workloads, and ship with CI/CD on Azure while keeping systems observable and maintainable. On my own products I carry the whole chain end-to-end — domain modeling, OAuth and billing, webhooks, containerized deployment, GDPR compliance and production support."
 
     [languages.en.params.hero]
         available = false
@@ -79,6 +79,10 @@ defaultContentLanguageInSubdir = true
         [[languages.en.params.stats.list]]
         value = ".NET · Oracle · Azure"
         label = "core stack, from API design to CI/CD"
+
+        [[languages.en.params.stats.list]]
+        value = "2"
+        label = "Shopify apps published on the App Store"
 
         [[languages.en.params.stats.list]]
         value = "FR · EN · VI"
@@ -116,7 +120,11 @@ defaultContentLanguageInSubdir = true
 
         [[languages.en.params.skills.list]]
         category = "Backend & frameworks"
-        items = [".NET / .NET Core", "ASP.NET Core", "Blazor", "WinForms", "REST APIs"]
+        items = [".NET / .NET Core", "ASP.NET Core", "Entity Framework Core", "Blazor", "WinForms", "REST APIs"]
+
+        [[languages.en.params.skills.list]]
+        category = "Frontend"
+        items = ["React", "TypeScript", "Vite"]
 
         [[languages.en.params.skills.list]]
         category = "Databases"
@@ -124,11 +132,15 @@ defaultContentLanguageInSubdir = true
 
         [[languages.en.params.skills.list]]
         category = "Cloud & DevOps"
-        items = ["Azure (VM, App Services)", "CI/CD", "Docker"]
+        items = ["Azure (VM, App Services)", "CI/CD", "Docker", "Cloudflare Tunnel"]
 
         [[languages.en.params.skills.list]]
         category = "Integration"
         items = ["MQTT / Mosquitto", "message queues", "gRPC"]
+
+        [[languages.en.params.skills.list]]
+        category = "Shopify platform"
+        items = ["Embedded apps (OAuth, token exchange)", "App Bridge", "Polaris", "Theme App Extensions", "App Proxy", "Shopify Billing", "GraphQL Admin API", "Webhooks"]
 
         [[languages.en.params.skills.list]]
         category = "Methods & tools"
@@ -136,6 +148,18 @@ defaultContentLanguageInSubdir = true
 
     [languages.en.params.projects]
         enable = true
+
+        [[languages.en.params.projects.list]]
+        title = "Facturette — Shopify app for French e-invoicing"
+        meta = "Shopify App Store"
+        url = "https://apps.shopify.com/facturette"
+        tagline = "A published Shopify app that turns every paid order into a legally compliant Factur-X invoice — a PDF/A-3 document carrying the EN 16931 CII XML inside it — and, on the paid tier, files B2B invoices to the merchant's certified platform (Plateforme Agréée). Built in .NET 10 / ASP.NET Core on Oracle with EF Core, shipped as a Docker container behind a Cloudflare Tunnel, with OAuth, Shopify Billing, GDPR webhooks and App Store review."
+
+        [[languages.en.params.projects.list]]
+        title = "BackInStock — Shopify app for restock alerts"
+        meta = "Shopify App Store"
+        url = "https://apps.shopify.com/backinstock-1"
+        tagline = "A published Shopify app that lets shoppers subscribe to a sold-out variant and emails them the moment it returns. .NET 10 backend with EF Core on Oracle, a React + Polaris admin, and a Theme App Extension widget merchants drop in from the theme editor. Inventory webhooks feed an asynchronous email queue with configurable delay, business-hours windows and stock thresholds."
 
         [[languages.en.params.projects.list]]
         title = "Argent — Personal Finance PWA"
@@ -268,7 +292,7 @@ defaultContentLanguageInSubdir = true
 
     [languages.fr.params.summary]
         enable = true
-        text = "Développeur backend avec plus de 5 ans d'expérience dans la conception de services fiables en .NET et PL/SQL pour des logiciels douaniers. Je conçois des API claires, optimise les charges lourdes en base de données et livre en CI/CD sur Azure, tout en gardant les systèmes observables et maintenables. À l'aise sur l'ensemble du cycle : de la modélisation du domaine et l'optimisation des performances au déploiement et au support en production."
+        text = "Développeur backend avec plus de 5 ans d'expérience dans la conception de services fiables en .NET et PL/SQL pour des logiciels douaniers, et auteur de deux applications Shopify publiées sur l'App Store. Je conçois des API claires, optimise les charges lourdes en base de données et livre en CI/CD sur Azure, tout en gardant les systèmes observables et maintenables. Sur mes propres produits, je porte toute la chaîne : modélisation du domaine, OAuth et facturation, webhooks, déploiement conteneurisé, conformité RGPD et support en production."
 
     [languages.fr.params.hero]
         available = false
@@ -284,6 +308,10 @@ defaultContentLanguageInSubdir = true
         [[languages.fr.params.stats.list]]
         value = ".NET · Oracle · Azure"
         label = "stack principale, de l'API au CI/CD"
+
+        [[languages.fr.params.stats.list]]
+        value = "2"
+        label = "applications Shopify publiées sur l'App Store"
 
         [[languages.fr.params.stats.list]]
         value = "FR · EN · VI"
@@ -321,7 +349,11 @@ defaultContentLanguageInSubdir = true
 
         [[languages.fr.params.skills.list]]
         category = "Backend & frameworks"
-        items = [".NET / .NET Core", "ASP.NET Core", "Blazor", "WinForms", "API REST"]
+        items = [".NET / .NET Core", "ASP.NET Core", "Entity Framework Core", "Blazor", "WinForms", "API REST"]
+
+        [[languages.fr.params.skills.list]]
+        category = "Frontend"
+        items = ["React", "TypeScript", "Vite"]
 
         [[languages.fr.params.skills.list]]
         category = "Bases de données"
@@ -329,11 +361,15 @@ defaultContentLanguageInSubdir = true
 
         [[languages.fr.params.skills.list]]
         category = "Cloud & DevOps"
-        items = ["Azure (VM, App Services)", "CI/CD", "Docker"]
+        items = ["Azure (VM, App Services)", "CI/CD", "Docker", "Tunnel Cloudflare"]
 
         [[languages.fr.params.skills.list]]
         category = "Intégration"
         items = ["MQTT / Mosquitto", "files de messages", "gRPC"]
+
+        [[languages.fr.params.skills.list]]
+        category = "Plateforme Shopify"
+        items = ["Apps embarquées (OAuth, token exchange)", "App Bridge", "Polaris", "Theme App Extensions", "App Proxy", "Facturation Shopify", "API GraphQL Admin", "Webhooks"]
 
         [[languages.fr.params.skills.list]]
         category = "Méthodes & outils"
@@ -341,6 +377,18 @@ defaultContentLanguageInSubdir = true
 
     [languages.fr.params.projects]
         enable = true
+
+        [[languages.fr.params.projects.list]]
+        title = "Facturette — application Shopify de facturation électronique"
+        meta = "Shopify App Store"
+        url = "https://apps.shopify.com/facturette"
+        tagline = "Une application Shopify publiée qui transforme chaque commande payée en facture Factur-X conforme — un PDF/A-3 embarquant le XML CII EN 16931 — et, sur l'offre payante, dépose les factures B2B sur la Plateforme Agréée du marchand. Développée en .NET 10 / ASP.NET Core sur Oracle avec EF Core, livrée en conteneur Docker derrière un tunnel Cloudflare, avec OAuth, la facturation Shopify, les webhooks RGPD et la revue App Store."
+
+        [[languages.fr.params.projects.list]]
+        title = "BackInStock — application Shopify d'alertes de réassort"
+        meta = "Shopify App Store"
+        url = "https://apps.shopify.com/backinstock-1"
+        tagline = "Une application Shopify publiée qui permet à un client de s'inscrire sur une déclinaison en rupture et le prévient par e-mail dès son retour. Backend .NET 10 avec EF Core sur Oracle, interface d'administration React + Polaris, et un widget Theme App Extension que le marchand ajoute depuis l'éditeur de thème. Les webhooks d'inventaire alimentent une file d'e-mails asynchrone avec délai, plages horaires ouvrées et seuils de stock configurables."
 
         [[languages.fr.params.projects.list]]
         title = "Argent — PWA de finances personnelles"
