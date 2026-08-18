@@ -143,3 +143,17 @@ Temporary Items
 hugo.exe
 .gitignore
 CONTENT_INTAKE.md
+
+### Hugo ###
+# Build output. .github/workflows/actions.yml rebuilds it from scratch on every
+# push to main (`hugo --minify`) before `netlify deploy --dir=public`, so nothing
+# reads the committed copy.
+#
+# It WAS tracked until 2026-08-18, and that was the bug: the workflow's
+# "Commit generated PDFs" step runs `git commit -a`, which swept in whichever
+# public/ files happened to differ that run. The directory therefore drifted
+# piecemeal out of sync with assets/ (public/js/darkmode.js still carried a
+# prefers-color-scheme listener the source had dropped). Untracked, `git commit -a`
+# skips it entirely.
+/public/
+.hugo_build.lock

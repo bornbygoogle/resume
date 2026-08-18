@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://elegant-malabi-169652.netlify.app/sitemap.xml
